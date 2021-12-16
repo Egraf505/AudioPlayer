@@ -3,14 +3,9 @@ package com.example.mediaplayer
 import android.os.Parcel
 import android.os.Parcelable
 
-class MusicFiles() {
-    private var path:String = ""
-    private var tittle = ""
-    private var artist = ""
-    private var album = ""
-    private var duration = ""
+class MusicFiles(var path : String,var tittle : String,var artist : String,var album : String,var duration : String) {
 
-    constructor(path : String,tittle : String,artist : String,album : String,duration : String) : this() {
+    init {
         this.path = path
         this.tittle = tittle
         this.artist = artist

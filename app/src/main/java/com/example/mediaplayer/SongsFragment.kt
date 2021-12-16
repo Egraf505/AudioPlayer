@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mediaplayer.MainActivity.Companion.musicFiles
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,7 +19,11 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SongsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SongsFragment : Fragment() {
+class SongsFragment() : Fragment() {
+
+    lateinit var recyclerView : RecyclerView
+    lateinit var musicAdapter: MusicAdapter
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,6 +42,14 @@ class SongsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view : View = inflater.inflate(R.layout.fragment_songs, container, false)
+        recyclerView = view.findViewById(R.id.recycleView)
+        recyclerView.setHasFixedSize(true)
+        if (!(musicFiles.size < 1))
+        {
+            musicAdapter = MusicAdapter(context!!, musicFiles)
+            recyclerView.adapter = musicAdapter
+            recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL,false)
+        }
         return view
     }
 
@@ -57,4 +72,5 @@ class SongsFragment : Fragment() {
                 }
             }
     }
+
 }

@@ -51,6 +51,7 @@ class MusicAdapter(var mContext : Context, var mFiles : ArrayList<MusicFiles> ) 
         }
         holder.itemView.setOnClickListener(View.OnClickListener {
             var intent = Intent(mContext, PlayerActivity::class.java)
+            intent.putExtra("position", position)
             mContext.startActivity(intent) })
     }
 

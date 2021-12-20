@@ -80,19 +80,19 @@
         android:layout_marginEnd="32dp"/>
 
     <TextView
+        android:id="@+id/song_artist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Исполнитель"
-        android:id="@+id/song_artist"
         android:layout_below="@+id/song_name"
-        android:textColor="#A5C0FFB2"
-        android:gravity="center_horizontal"
-        android:textSize="16dp"
-        android:fontFamily="@font/gilroy_ultralight"
-        android:singleLine="true"
-        android:ellipsize="end"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"/>
+        android:layout_marginEnd="40dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/gilroy_ultralight"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        android:text="Исполнитель"
+        android:textColor="#A5C0FFB2"
+        android:textSize="16dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -148,6 +148,41 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="32dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/relative_layout_for_bottom"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/seek_bar_layout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1:28"
+            android:id="@+id/duretionPlayed"
+            android:textColor="#ffffff"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4:28"
+            android:id="@+id/durationTotal"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"/>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:outlineAmbientShadowColor="#ffffff"
+            android:outlineSpotShadowColor="#ffffff" />
     </RelativeLayout>
 
 

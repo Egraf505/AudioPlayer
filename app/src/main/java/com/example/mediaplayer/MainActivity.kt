@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
     companion object{
         @JvmField
         var musicFiles : ArrayList<MusicFiles> = ArrayList<MusicFiles>()
+
+        @JvmField
+        var shuffleBoolean = false
+        var repeatBoolean = false
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

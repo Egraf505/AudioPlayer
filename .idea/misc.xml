@@ -7,6 +7,7 @@
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/ic_baseline_chevron_left.xml" value="0.3828125" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/ic_baseline_menu.xml" value="0.3828125" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.2390625" />
+        <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/ic_baseline_shuffle.xml" value="0.3828125" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/main_bg.xml" value="0.3828125" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/drawable/rounded_corner.xml" value="0.3828125" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/layout/activity_main.xml" value="0.22" />
@@ -16,6 +17,8 @@
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/layout/fragment_songs.xml" value="0.36666666666666664" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/layout/music_items.xml" value="0.20520833333333333" />
         <entry key="..\:/Project/MediaPlayer/app/src/main/res/layout/settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project/MediaPlayer/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Project/MediaPlayer/app/src/main/res/menu/popup.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

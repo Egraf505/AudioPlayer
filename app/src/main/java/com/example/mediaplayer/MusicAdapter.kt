@@ -7,8 +7,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import java.lang.reflect.Array
@@ -18,10 +17,12 @@ class MusicAdapter(var mContext : Context, var mFiles : ArrayList<MusicFiles> ) 
     class MyVieHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
          var file_name : TextView
          var album_art : ImageView
+         var menuMore : ImageView
 
         init {
             file_name = itemView.findViewById(R.id.music_file_name)
             album_art = itemView.findViewById(R.id.music_img)
+            menuMore = itemView.findViewById(R.id.menuDelete)
         }
     }
 
@@ -53,6 +54,18 @@ class MusicAdapter(var mContext : Context, var mFiles : ArrayList<MusicFiles> ) 
             var intent = Intent(mContext, PlayerActivity::class.java)
             intent.putExtra("position", position)
             mContext.startActivity(intent) })
+        holder.menuMore.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                var popupMenu = PopupMenu(mContext,p0)
+                popupMenu.menuInflater.inflate(R.menu.popup,popupMenu.menu)
+                popupMenu.show()
+                popupMenu.setOnMenuItemClickListener {
+                    when (it.itemId){
+                        R.id.delete ->
+                    }
+                }
+            }
+        })
     }
 
     override fun getItemCount(): Int {

@@ -1,22 +1,22 @@
 package com.example.mediaplayer
 
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.media.MediaMetadataRetriever
 import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.ImageView
 import android.widget.SeekBar
-import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.mediaplayer.MainActivity.Companion.musicFiles
-import com.example.mediaplayer.PlayerActivity.Companion.mediaPlayer
+import com.example.mediaplayer.MainActivity.Companion.repeatBoolean
+import com.example.mediaplayer.MainActivity.Companion.shuffleBoolean
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.*
+import kotlin.collections.ArrayList
 
 class PlayerActivity : AppCompatActivity() {
 
@@ -85,6 +85,32 @@ class PlayerActivity : AppCompatActivity() {
                 handler.postDelayed(this,1000)
             }
         })
+        shuffleBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                if (shuffleBoolean)
+                {
+                    shuffleBoolean = false
+                    shuffleBtn.setImageResource(R.drawable.ic_shuffle_on)
+                }
+                else{
+                    shuffleBoolean = true
+                    shuffleBtn.setImageResource(R.drawable.ic_baseline_shuffle)
+                }
+            }
+        })
+        repeatBtn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                if (repeatBoolean)
+                {
+                    repeatBoolean = false
+                    repeatBtn.setImageResource(R.drawable.ic_repeat_on)
+                }
+                else{
+                    repeatBoolean = true
+                    repeatBtn.setImageResource(R.drawable.ic_baseline_repeat_24)
+                }
+            }
+        })
 
     }
 
@@ -113,7 +139,12 @@ class PlayerActivity : AppCompatActivity() {
         if (mediaPlayer.isPlaying){
             mediaPlayer.stop()
             mediaPlayer.release()
-            position = (if((position - 1) < 0) (listSongs.size - 1) else(position - 1))
+            if (repeatBoolean && !shuffleBoolean){
+                position = GetRandom(listSongs.size - 1)
+            }
+            else if (!repeatBoolean && !shuffleBoolean) {
+                position = (if((position - 1) < 0) (listSongs.size - 1) else(position - 1))
+            }
             uri = Uri.parse(listSongs.get(position).path)
             mediaPlayer = MediaPlayer.create(applicationContext, uri)
             metaData(uri)
@@ -135,7 +166,12 @@ class PlayerActivity : AppCompatActivity() {
         else{
             mediaPlayer.stop()
             mediaPlayer.release()
-            position = (if((position - 1) < 0) (listSongs.size - 1) else(position - 1))
+            if (repeatBoolean && !shuffleBoolean){
+                position = GetRandom(listSongs.size - 1)
+            }
+            else if (!repeatBoolean && !shuffleBoolean) {
+                position = (if((position - 1) < 0) (listSongs.size - 1) else(position - 1))
+            }
             uri = Uri.parse(listSongs.get(position).path)
             mediaPlayer = MediaPlayer.create(applicationContext, uri)
             metaData(uri)
@@ -173,7 +209,12 @@ class PlayerActivity : AppCompatActivity() {
         if (mediaPlayer.isPlaying){
             mediaPlayer.stop()
             mediaPlayer.release()
-            position = ((position + 1) % listSongs.size)
+            if (repeatBoolean && !shuffleBoolean){
+                position = GetRandom(listSongs.size - 1)
+            }
+            else if (!repeatBoolean && !shuffleBoolean) {
+                position = ((position+1)% listSongs.size)
+            }
             uri = Uri.parse(listSongs.get(position).path)
             mediaPlayer = MediaPlayer.create(applicationContext, uri)
             metaData(uri)
@@ -195,7 +236,12 @@ class PlayerActivity : AppCompatActivity() {
         else{
             mediaPlayer.stop()
             mediaPlayer.release()
-            position = ((position + 1) % listSongs.size)
+            if (repeatBoolean && !shuffleBoolean){
+                position = GetRandom(listSongs.size - 1)
+            }
+            else if (!repeatBoolean && !shuffleBoolean) {
+                position = ((position+1)% listSongs.size)
+            }
             uri = Uri.parse(listSongs.get(position).path)
             mediaPlayer = MediaPlayer.create(applicationContext, uri)
             metaData(uri)
@@ -213,6 +259,11 @@ class PlayerActivity : AppCompatActivity() {
             })
             playPauseBtn.setImageResource(R.drawable.ic_baseline_play_arrow)
         }
+    }
+
+    private fun GetRandom(i: Int): Int {
+        var random = Random()
+        return random.nextInt(i+1);
     }
 
     private fun playThreadBtn() {

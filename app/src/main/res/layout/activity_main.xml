@@ -49,10 +49,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Text_MyMusic"
         app:layout_constraintVertical_bias="0.0"
-        app:tabIndicator="@drawable/gradient_background"
+        app:tabIndicator="@null"
         app:tabIndicatorFullWidth="true"
         app:tabIndicatorGravity="center"
         app:tabIndicatorHeight="40dp"
+        app:tabIndicatorColor="@null"
         app:tabTextColor="#E5E5E5"
         tools:ignore="SpeakableTextPresentCheck" />
 

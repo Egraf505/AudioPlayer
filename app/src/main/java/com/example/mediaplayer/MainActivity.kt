@@ -82,8 +82,7 @@ class MainActivity : AppCompatActivity() {
         val viewPager : ViewPager = findViewById(R.id.viewpage)
         val tabLayout : TabLayout = findViewById(R.id.tab_layout)
         val viewPagerAdapter  = ViewPagerAdapter(supportFragmentManager)
-        viewPagerAdapter.addFragments(SongsFragment(), title = "Песни")
-        viewPagerAdapter.addFragments(AlbumFragment(), title = "Альбомы")
+        viewPagerAdapter.addFragments(SongsFragment(), title = "")
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
     }

@@ -88,7 +88,7 @@
                         android:textColor="#000000"
                         android:textSize="16dp"
                         android:textStyle="bold"
-                        tools:text="Имя" />
+                        tools:text="Name" />
 
                     <TextView
                         android:id="@+id/textView7"
@@ -96,12 +96,12 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gilroy_ultralight"
                         android:gravity="left|center"
-                        android:text="TextProfile"
+                        android:text="Елизавета"
                         android:paddingLeft="10dp"
                         android:textColor="#2F2E2E"
                         android:textSize="12dp"
                         android:textStyle="bold"
-                        tools:text="Имя профиля" />
+                        tools:text="Елизавета" />
 
                 </LinearLayout>
 
@@ -116,15 +116,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/TextFolder"
-                android:layout_width="362dp"
-                android:layout_height="31dp"
-                android:gravity="center|left"
-                android:text="Папка"
-                android:textColor="#EAF0FF"
-                android:textSize="13dp" />
-
             <LinearLayout
                 android:id="@+id/Folder"
                 android:layout_width="360dp"
@@ -135,32 +126,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/TextFolderMusic"
-                        android:layout_width="match_parent"
-                        android:layout_height="27dp"
-                        android:fontFamily="@font/gilroy_ultralight"
-                        android:gravity="center|left"
-                        android:paddingLeft="10dp"
-                        android:text="Папка с музыкой"
-                        android:textColor="#000000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/FolderStr"
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:fontFamily="@font/gilroy_ultralight"
-                        android:gravity="center|left"
-                        android:paddingLeft="10dp"
-                        android:text="Нажмите чтобы выбрать папку"
-                        android:textColor="#2F2E2E"
-                        android:textSize="11dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    android:orientation="vertical"/>
 
             </LinearLayout>
 
@@ -199,7 +165,7 @@
                     android:fontFamily="@font/gilroy_ultralight"
                     android:gravity="center|left"
                     android:paddingLeft="10dp"
-                    android:text="email"
+                    android:text="lmza.i@mail.ru"
                     android:textColor="#2F2E2E"
                     android:textSize="11dp"
                     android:textStyle="bold" />
@@ -237,60 +203,6 @@
                     android:textSize="11dp"
                     android:textStyle="bold" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textTheme"
-                android:layout_width="360dp"
-                android:layout_height="31dp"
-                android:gravity="center|left"
-                android:text="Темы"
-                android:textColor="#EAF0FF"
-                android:textSize="13dp" />
-
-            <LinearLayout
-                android:id="@+id/ThemeStandart"
-                android:layout_width="360dp"
-                android:background="@drawable/rounded_corner"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="299dp"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textThemeStandart"
-                        android:layout_width="282dp"
-                        android:layout_height="27dp"
-                        android:fontFamily="@font/gilroy_ultralight"
-                        android:gravity="center|left"
-                        android:paddingLeft="10dp"
-                        android:text="Тема Стандартная"
-                        android:textColor="#000000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/themeColorTextPurple"
-                        android:layout_width="282dp"
-                        android:layout_height="24dp"
-                        android:fontFamily="@font/gilroy_ultralight"
-                        android:gravity="center|left"
-                        android:paddingLeft="10dp"
-                        android:text="фиолетовая"
-                        android:textColor="#2F2E2E"
-                        android:textSize="11dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <androidx.appcompat.widget.SwitchCompat
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right|center" />
-
-            </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
